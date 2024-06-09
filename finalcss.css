@@ -1,0 +1,135 @@
+  /* CSS Variables for dynamic colors , applied globally*/
+  :root {
+        --header-blue: #333; /* changed to greyish black */
+        --header-text: #ffffff; /* text color is white /*/
+        --btn-number: #f0f0f0;
+        --btn-operator: #6c6e6f; /* changing to light grey */
+        --btn-action: #8d8f8d;
+        --btn-clear: #ba918f;
+        --btn-backspace: #d1cfc7; /* changed to light grey */
+        --display-bg: #ecf0f1;
+        --display-text: #2c3e50;
+        --display-border: #bdc3c7;
+    }
+            /* Global styles */
+            body {
+                font-family: 'Roboto', sans-serif;
+                text-align: center;
+                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                margin: 0;
+                min-height: 100vh; 
+                /*To fix the footer at the bottom of the webpage*/
+                display: flex;   
+                flex-direction: column;
+            }
+    
+            /* Calculator styles */
+            .calculator {
+                width: 320px; /*Setting fixed width to the cacli for responsive sizes*/
+                margin: 40px auto;  /*TO center the calculator horizontally/*/
+                padding: 25px;
+                border-radius: 15px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                background: #ffffff;
+            }
+            .display {
+                width: 100%;
+                height: 60px;
+                padding: 15px;
+                font-size: 28px;
+                font-weight: 300;
+                text-align: right; /*text appears on the right of display screen*/
+                border: 2px solid var(--display-border);
+                border-radius: 10px;
+                box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);/*TO create a inner shadow*/
+                background-color: var(--display-bg);
+                color: var(--display-text); /*refers to display-text*/
+                box-sizing: border-box;
+                margin: 0 auto 20px;
+            }
+            .keys { /*ALign keys in a grid */
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 12px;  
+            }
+            .keys button {
+                width: 100%;
+                height: 60px;
+                font-size: 24px;
+                font-weight: 400;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: all 0.3s ease; /*slightly hover it*/
+                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /*TO give a 3D appearance*/
+                color: #ffffff;
+            }
+            /* Button color classes using CSS variables */
+            .keys button.number { background: linear-gradient(to bottom, var(--btn-number), #d9d9d9); color: #333; }
+            .keys button.operator { background: linear-gradient(to bottom, var(--btn-operator), #5dd6e9); }/*These all sets the bottom to appear slightly darker*/
+            .keys button.action { background: linear-gradient(to bottom, var(--btn-action), #32a852); }
+            .keys button.clear { background: linear-gradient(to bottom, var(--btn-clear), #d93026); }
+            .keys button.backspace { background: linear-gradient(to bottom, var(--btn-backspace), #e68a00); }
+            
+            /* Button hover and active states */
+            /*performs when we hover or actively clicks the button*/
+            .keys button:hover { box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); transform: translateY(-4px); }
+            .keys button:active { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); transform: translateY(0); }
+    
+            /* Header and footer styles using CSS variables */
+            .header, .footer {
+                background: linear-gradient(to bottom, var(--header-blue), #9560daad);
+                color: var(--header-text);
+                padding: 20px;
+                box-shadow: 0 2px 10px rgba(142, 100, 227, 0.1);/*just to add some depth*/
+            }
+            .header h1 { margin: 0; font-size: 2.5em; font-weight: 700; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); }
+            .header span { font-size: 1.2em; font-weight: 300; }
+            .footer { /*sets the footer surroundings and sizes*/
+                padding: 15px;
+                font-size: 0.9em;
+                font-weight: 300;
+                margin-top: auto;
+                box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            }
+    
+            /* Overlay styles */
+            .overlay {
+                position: fixed; /*even user scrolls ,it helps to stay fixed*/
+                top: 0;
+                left: 0;
+                width: 100%;/*TO cover the whole screen*/
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.6);/*set to 60% opacity/*/
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000; /*Makes it appear on the top of others*/
+            }
+            .overlay-content { /*specifically for the content  on the overlay*/
+                background: #fff;
+                padding: 30px;
+                border-radius: 15px;/*round corners*/
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                text-align: center;
+            }
+            .overlay-content h2 { color: #333; margin-bottom: 20px; }
+            .overlay-content input {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0 20px;
+                border: 1px solid #ddd;/*creates a round box*/
+                border-radius: 5px;
+                font-size: 1em;
+            }
+            .overlay-content button {
+                padding: 10px 20px;
+                background: linear-gradient(to bottom, var(--btn-action), #32a852);
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                font-size: 1em;
+                cursor: pointer;/*pointer hand*/
+                transition: all 0.3s ease; /*performs smooth shadow change*/
+            }
+            .overlay-content button:hover { box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }/*gives interactive shadow effect*/

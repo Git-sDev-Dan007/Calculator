@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathMaster</title>
+    <link rel="icon" href="./cacli_img.jpg" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="finalcss.css">
+</head>
+<body>
+    <div class="overlay">
+        <div class="overlay-content">
+            <!--Introduction Details-->
+            <h2>Welcome to MathMaster</h2>
+            <p>Tell us your name:</p>
+            <input type="text" id="username" placeholder="Your name">
+            <p>Choose your greeting emoji:</p>
+            <input type="text" id="emoji" placeholder="e.g. 👋, 😊(Optional)">
+            <button onclick="startCalculator()">Start Calculating</button>
+        </div>
+    </div>
+    
+    <header class="header">
+        <h1>MathMaster</h1>
+        <span id="greeting"></span>
+    </header>
+    <div class="calculator">
+        <input type="text" id="display" class="display" readonly>
+        <div class="keys">
+            <!--Calculator Buttons-->
+            <button onclick="append('7')" class="number">7</button>
+            <button onclick="append('8')" class="number">8</button>
+            <button onclick="append('9')" class="number">9</button>
+            <button onclick="setInputOperator('+')" class="operator">+</button>
+            
+            <button onclick="append('4')" class="number">4</button>
+            <button onclick="append('5')" class="number">5</button>
+            <button onclick="append('6')" class="number">6</button>
+            <button onclick="setInputOperator('-')" class="operator">-</button>
+            
+            <button onclick="append('1')" class="number">1</button>
+            <button onclick="append('2')" class="number">2</button>
+            <button onclick="append('3')" class="number">3</button>
+            <button onclick="setInputOperator('*')" class="operator">×</button>
+            
+            <button onclick="append('0')" class="number">0</button>
+            <button onclick="append('.')" class="number">.</button>
+            <button onclick="setInputOperator('/')" class="operator">÷</button>
+            <button onclick="calculate()" class="action">=</button>
+            
+            <button onclick="clearDisplay()" class="clear">C</button>
+            <button onclick="append('^2')" class="operator">x²</button>
+            <button onclick="setInputOperator('%')" class="operator">%</button>
+            <button onclick="backspace()" class="backspace">⌫</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>© 2024 MathMaster</p>
+        <h5>Share your valuable feedback : Customercare@calci.com</h5>
+    </footer>
+    <script src="finaljs.js"></script>
+</body>
+</html>
