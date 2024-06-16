@@ -1,2 +1,2 @@
 ## Hola Guyss!!
-# Link for the Calculato 🧮 :https://dancalculator.netlify.app/
+# Link for the Calculator 🧮 :https://dancalculator.netlify.app/
